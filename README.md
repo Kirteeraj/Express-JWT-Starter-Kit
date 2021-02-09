@@ -2,8 +2,9 @@
 REST API
 
 # Start
-Create .env file with refrence to .env.example   
-Run `npm start`.
+Create .env file with refrence to .env.example  
+Run `npm install`   
+Run `npm start`
 
 # Developement
 JWT Auth is Implemented for api.   
