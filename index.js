@@ -2,6 +2,7 @@ const express = require('express')
 const app = express();
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
+const morgan = require('morgan'); // package to log all requests
 
 //import routers
 const authRoute = require('./routes/auth');
@@ -17,10 +18,10 @@ mongoose.connect(process.env.DB_URL,()=>{
 
 //Middlewares
 app.use(express.json());
-
+// app.use(morgan('combined'))
 
 //Route middlewares
-app.use('/api/user',authRoute);
+app.use('/auth',authRoute);
 app.use('/api/demoprivate',demoPrivateRoute);
 
 

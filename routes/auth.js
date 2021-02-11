@@ -34,6 +34,7 @@ router.post("/register", async (req, res) => {
         res.send({
             user: user.email,
         });
+        //console.log(savedUser)
     } catch (err) {
         res.status(400).send(err);
     }
@@ -57,7 +58,10 @@ router.post("/login", async (req, res) => {
 
     //create an assign token
     const token = jwt.sign({email:user.email},process.env.TOKEN_SECRET);
-    res.header('auth-token',token).send(token);
+    res.header('auth-token',token).send({
+        email:user.email,
+        jwt:token
+    });
 });
 
 module.exports = router;
