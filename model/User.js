@@ -26,6 +26,9 @@ const userSchema = new mongoose.Schema({
     active:{
         type:Boolean,
         default:true
+    },
+    profileId:{
+        type:mongoose.Schema.Types.ObjectId,
     }
 });
 

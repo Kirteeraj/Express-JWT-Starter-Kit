@@ -1,7 +1,9 @@
+const dotenv = require('dotenv');
+dotenv.config();
+
 const express = require('express')
 const app = express();
 const mongoose = require('mongoose');
-const dotenv = require('dotenv');
 const morgan = require('morgan'); // package to log all requests
 
 //import routers
@@ -10,7 +12,6 @@ const demoPrivateRoute = require('./routes/demoPriveteRoute');
 const setProfile = require('./routes/setProfile')
 
 
-dotenv.config();
 
 //connect to DB
 mongoose.connect(process.env.DB_URL,()=>{
