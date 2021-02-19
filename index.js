@@ -26,7 +26,7 @@ app.use(express.static('public'));
 //Route middlewares
 app.use('/auth',authRoute);
 app.use('/api/demoprivate',demoPrivateRoute);
-app.use('/profile',setProfile)
+app.use('/profile',setProfile);
 
 
 

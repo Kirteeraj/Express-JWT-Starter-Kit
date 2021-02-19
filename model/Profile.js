@@ -6,9 +6,9 @@ const profileSchema = mongoose.Schema({
         type:mongoose.Schema.Types.ObjectId,
         required:true,
     },
-    imagePath:{
+    imageUrl:{
         type: String,
-        default:'<path to avatar image>'
+        default:'<path to avatar image- TODO>'
     },
     intro:{
         type:String,
@@ -18,7 +18,7 @@ const profileSchema = mongoose.Schema({
     place:{
         type:String,
         max:200,
-        default:'-'
+        required:true
     },
     waNumber:{
         type:String, // validation done by joi - helper
@@ -30,10 +30,11 @@ const profileSchema = mongoose.Schema({
     },
     scrrible:{
         type:String,
-        default:'-'
+        required:true
+
     },
     updated: { type: Date, default: Date.now },
 });
 
 
-module.exports = mongoose.Model('Profile',profileSchema);
+module.exports = mongoose.model('Profile',profileSchema);
